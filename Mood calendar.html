@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mood Calendar</title>
+    <style>
+      body {
+        font-family: "Trebuchet MS", sans-serif;
+      }
+      .center {
+        text-align: center;
+        padding-top: 30px;
+      }
+      .select_p {
+        padding-top: 20px;
+      }
+      button {
+        margin: 0 10px;
+        border-radius: 50%;
+        border: 1px solid black;
+        transition-duration: .5s;
+      }
+      button:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+        text-align: center;
+      }
+      .green {
+        background-color: rgb(26, 229, 26);
+      }
+      .blue {
+        background-color: rgb(8, 8, 236);
+      }
+      .hotpink{
+        background-color: hotpink;
+      }
+      .darkgreen {
+        background-color: rgb(3, 81, 62);
+      }
+      .container {
+        display: grid;
+
+        grid-gap: 1rem;
+        grid-template-columns: repeat(Auto-fit, minmax(400px, 1fr));
+      }
+      .box {
+        margin: 12px;
+        /* background-color: aqua;
+border: 2px solid black;  */
+        height: fit-content;
+        width: fit-content;
+        justify-self: center;
+      }
+      .box h2 {
+        margin: 11px;
+      }
+      .week_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .week_days {
+        padding: 0 7px;
+      }
+      .days_container {
+        display: flex;
+      }
+      .days {
+        padding: 0 8px;
+      }
+      td {
+        height: 15px;
+        width: 15px;
+        padding: 6px;
+      }
+      td .day {
+        background-color: rgb(136, 133, 129);
+        border-radius: 100px;
+        padding: 4px;
+      }
+      td .day:hover {
+        cursor: pointer;
+      }.white{
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <h2>2023 Mood Calendar</h2>
+      <p>~ color each day depending on what your mood was / is ~</p>
+      <p class="select_p">Select mood:</p>
+      <div class="mood">
+        <button id="green" value="green" class="btn green" onclick="callcolor('green')">
+          <i class="fas fa-angry" style="font-size: 36px">&#128512;</i>
+        </button>
+        <button id="blue" value="blue" class="btn blue" onclick="callcolor('blue')">
+          <i class="fas fa-angry" style="font-size: 36px">&#128516;</i>
+        </button>
+        <button id="pink" value="hotpink" class="btn hotpink" onclick="callcolor('hotpink')">
+          <i class="fas fa-angry" style="font-size: 36px">&#128525;</i>
+        </button>
+        <button id="darkgreen" value="darkgreen" class="btn darkgreen" onclick="callcolor('darkgreen')">
+          <i class="fas fa-angry" style="font-size: 36px"> &#128514;</i>
+        </button>
+      </div>
+      <p>Then click the circles below</p>
+      <div class="container">
+        <div class="box">
+          <h2>January</h2>
+          <table>
+            <thead>
+              <tr class="week_days">
+                <th class="days">Sun</th>
+                <th class="days">Mon</th>
+                <th class="days">Thu</th>
+                <th class="days">Wed</th>
+                <th class="days">Thu</th>
+                <th class="days">Fri</th>
+                <th class="days">Sat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row1">
+                <td><span class="day">01</span></td>
+                <td><span class="day">02</span></td>
+                <td><span class="day">03</span></td>
+                <td><span class="day">04</span></td>
+                <td><span class="day">05</span></td>
+                <td><span class="day">06</span></td>
+                <td><span class="day">07</span></td>
+              </tr>
+
+              <tr class="row2">
+                <td><span class="day">08</span></td>
+                <td><span class="day">09</span></td>
+                <td><span class="day">10</span></td>
+                <td><span class="day">11</span></td>
+                <td><span class="day">12</span></td>
+                <td><span class="day">13</span></td>
+                <td><span class="day">14</span></td>
+              </tr>
+
+              <tr class="row3">
+                <td><span class="day">15</span></td>
+                <td><span class="day">16</span></td>
+                <td><span class="day">17</span></td>
+                <td><span class="day">18</span></td>
+                <td><span class="day">19</span></td>
+                <td><span class="day">20</span></td>
+                <td><span class="day">21</span></td>
+              </tr>
+
+              <tr class="row4">
+                <td><span class="day">22</span></td>
+                <td><span class="day">23</span></td>
+                <td><span class="day">24</span></td>
+                <td><span class="day">25</span></td>
+                <td><span class="day">26</span></td>
+                <td><span class="day">27</span></td>
+                <td><span class="day">28</span></td>
+              </tr>
+
+              <tr class="row5">
+                <td><span class="day">29</span></td>
+                <td><span class="day">30</span></td>
+                <td><span class="day">31</span></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="box">
+          <h2>Februry</h2>
+          <table>
+            <thead>
+              <tr class="week_days">
+                <th class="days">Sun</th>
+                <th class="days">Mon</th>
+                <th class="days">Thu</th>
+                <th class="days">Wed</th>
+                <th class="days">Thu</th>
+                <th class="days">Fri</th>
+                <th class="days">Sat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row1">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><span class="day">01</span></td>
+                <td><span class="day">02</span></td>
+                <td><span class="day">03</span></td>
+                <td><span class="day">04</span></td>
+              </tr>
+
+              <tr class="row2">
+                <td><span class="day">05</span></td>
+                <td><span class="day">06</span></td>
+                <td><span class="day">07</span></td>
+                <td><span class="day">08</span></td>
+                <td><span class="day">09</span></td>
+                <td><span class="day">10</span></td>
+                <td><span class="day">11</span></td>
+              </tr>
+
+              <tr class="row3">
+                <td><span class="day">12</span></td>
+                <td><span class="day">13</span></td>
+                <td><span class="day">14</span></td>
+                <td><span class="day">15</span></td>
+                <td><span class="day">16</span></td>
+                <td><span class="day">17</span></td>
+                <td><span class="day">18</span></td>
+              </tr>
+
+              <tr class="row4">
+                <td><span class="day">19</span></td>
+                <td><span class="day">20</span></td>
+                <td><span class="day">21</span></td>
+                <td><span class="day">22</span></td>
+                <td><span class="day">23</span></td>
+                <td><span class="day">24</span></td>
+                <td><span class="day">25</span></td>
+              </tr>
+
+              <tr class="row5">
+                <td><span class="day">26</span></td>
+                <td><span class="day">27</span></td>
+                <td><span class="day">28</span></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="box">
+          <h2>March</h2>
+          <table>
+            <thead>
+              <tr class="week_days">
+                <th class="days">Sun</th>
+                <th class="days">Mon</th>
+                <th class="days">Thu</th>
+                <th class="days">Wed</th>
+                <th class="days">Thu</th>
+                <th class="days">Fri</th>
+                <th class="days">Sat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row1">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><span class="day">01</span></td>
+                <td><span class="day">02</span></td>
+                <td><span class="day">03</span></td>
+                <td><span class="day">04</span></td>
+              </tr>
+
+              <tr class="row2">
+                <td><span class="day">05</span></td>
+                <td><span class="day">06</span></td>
+                <td><span class="day">07</span></td>
+                <td><span class="day">08</span></td>
+                <td><span class="day">09</span></td>
+                <td><span class="day">10</span></td>
+                <td><span class="day">11</span></td>
+              </tr>
+
+              <tr class="row3">
+                <td><span class="day">12</span></td>
+                <td><span class="day">13</span></td>
+                <td><span class="day">14</span></td>
+                <td><span class="day">15</span></td>
+                <td><span class="day">16</span></td>
+                <td><span class="day">17</span></td>
+                <td><span class="day">18</span></td>
+              </tr>
+
+              <tr class="row4">
+                <td><span class="day">19</span></td>
+                <td><span class="day">20</span></td>
+                <td><span class="day">21</span></td>
+                <td><span class="day">22</span></td>
+                <td><span class="day">23</span></td>
+                <td><span class="day">24</span></td>
+                <td><span class="day">25</span></td>
+              </tr>
+
+              <tr class="row5">
+                <td><span class="day">26</span></td>
+                <td><span class="day">27</span></td>
+                <td><span class="day">28</span></td>
+                <td><span class="day">29</span></td>
+                <td><span class="day">30</span></td>
+                <td><span class="day">31</span></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="box">
+          <h2>April</h2>
+          <table>
+            <thead>
+              <tr class="week_days">
+                <th class="days">Sun</th>
+                <th class="days">Mon</th>
+                <th class="days">Thu</th>
+                <th class="days">Wed</th>
+                <th class="days">Thu</th>
+                <th class="days">Fri</th>
+                <th class="days">Sat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row1">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><span class="day">01</span></td>
+              </tr>
+
+              <tr class="row2">
+                <td><span class="day">02</span></td>
+                <td><span class="day">03</span></td>
+                <td><span class="day">04</span></td>
+                <td><span class="day">05</span></td>
+                <td><span class="day">06</span></td>
+                <td><span class="day">07</span></td>
+                <td><span class="day">08</span></td>
+              </tr>
+
+              <tr class="row3">
+                <td><span class="day">09</span></td>
+                <td><span class="day">10</span></td>
+                <td><span class="day">11</span></td>
+                <td><span class="day">12</span></td>
+                <td><span class="day">13</span></td>
+                <td><span class="day">14</span></td>
+                <td><span class="day">15</span></td>
+              </tr>
+
+              <tr class="row4">
+                <td><span class="day">16</span></td>
+                <td><span class="day">17</span></td>
+                <td><span class="day">18</span></td>
+                <td><span class="day">19</span></td>
+                <td><span class="day">20</span></td>
+                <td><span class="day">21</span></td>
+                <td><span class="day">22</span></td>
+              </tr>
+
+              <tr class="row5">
+                <td><span class="day">23</span></td>
+                <td><span class="day">24</span></td>
+                <td><span class="day">25</span></td>
+                <td><span class="day">26</span></td>
+                <td><span class="day">27</span></td>
+                <td><span class="day">28</span></td>
+                <td><span class="day">29</span></td>
+              </tr>
+              <tr class="row6">
+                <td><span class="day">30</span></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="box">
+          <h2>May</h2>
+          <table>
+            <thead>
+              <tr class="week_days">
+                <th class="days">Sun</th>
+                <th class="days">Mon</th>
+                <th class="days">Thu</th>
+                <th class="days">Wed</th>
+                <th class="days">Thu</th>
+                <th class="days">Fri</th>
+                <th class="days">Sat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row1">
+                <td></td>
+                <td><span class="day">01</span></td>
+                <td><span class="day">02</span></td>
+                <td><span class="day">03</span></td>
+                <td><span class="day">04</span></td>
+                <td><span class="day">05</span></td>
+                <td><span class="day">06</span></td>
+              </tr>
+
+              <tr class="row2">
+                <td><span class="day">07</span></td>
+                <td><span class="day">08</span></td>
+                <td><span class="day">09</span></td>
+                <td><span class="day">10</span></td>
+                <td><span class="day">11</span></td>
+                <td><span class="day">12</span></td>
+                <td><span class="day">13</span></td>
+              </tr>
+
+              <tr class="row3">
+                <td><span class="day">14</span></td>
+                <td><span class="day">15</span></td>
+                <td><span class="day">16</span></td>
+                <td><span class="day">17</span></td>
+                <td><span class="day">18</span></td>
+                <td><span class="day">19</span></td>
+                <td><span class="day">20</span></td>
+              </tr>
+
+              <tr class="row4">
+                <td><span class="day">21</span></td>
+                <td><span class="day">22</span></td>
+                <td><span class="day">23</span></td>
+                <td><span class="day">24</span></td>
+                <td><span class="day">25</span></td>
+                <td><span class="day">26</span></td>
+                <td><span class="day">27</span></td>
+              </tr>
+
+              <tr class="row5">
+                <td><span class="day">28</span></td>
+                <td><span class="day">29</span></td>
+                <td><span class="day">30</span></td>
+                <td><span class="day">31</span></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="box">
+          <h2>June</h2>
+          <table>
+            <thead>
+              <tr class="week_days">
+                <th class="days">Sun</th>
+                <th class="days">Mon</th>
+                <th class="days">Thu</th>
+                <th class="days">Wed</th>
+                <th class="days">Thu</th>
+                <th class="days">Fri</th>
+                <th class="days">Sat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row1">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><span class="day">01</span></td>
+                <td><span class="day">02</span></td>
+                <td><span class="day">03</span></td>
+              </tr>
+
+              <tr class="row2">
+                <td><span class="day">04</span></td>
+                <td><span class="day">05</span></td>
+                <td><span class="day">06</span></td>
+                <td><span class="day">07</span></td>
+                <td><span class="day">08</span></td>
+                <td><span class="day">09</span></td>
+                <td><span class="day">10</span></td>
+              </tr>
+
+              <tr class="row3">
+                <td><span class="day">11</span></td>
+                <td><span class="day">12</span></td>
+                <td><span class="day">13</span></td>
+                <td><span class="day">14</span></td>
+                <td><span class="day">15</span></td>
+                <td><span class="day">16</span></td>
+                <td><span class="day">17</span></td>
+              </tr>
+
+              <tr class="row4">
+                <td><span class="day">18</span></td>
+                <td><span class="day">19</span></td>
+                <td><span class="day">20</span></td>
+                <td><span class="day">21</span></td>
+                <td><span class="day">22</span></td>
+                <td><span class="day">23</span></td>
+                <td><span class="day">24</span></td>
+              </tr>
+
+              <tr class="row5">
+                <td><span class="day">25</span></td>
+                <td><span class="day">26</span></td>
+                <td><span class="day">27</span></td>
+                <td><span class="day">28</span></td>
+                <td><span class="day">29</span></td>
+                <td><span class="day">30</span></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="box">
+          <h2>July</h2>
+          <table>
+            <thead>
+              <tr class="week_days">
+                <th class="days">Sun</th>
+                <th class="days">Mon</th>
+                <th class="days">Thu</th>
+                <th class="days">Wed</th>
+                <th class="days">Thu</th>
+                <th class="days">Fri</th>
+                <th class="days">Sat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row1">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><span class="day">01</span></td>
+              </tr>
+
+              <tr class="row2">
+                <td><span class="day">02</span></td>
+                <td><span class="day">03</span></td>
+                <td><span class="day">04</span></td>
+                <td><span class="day">05</span></td>
+                <td><span class="day">06</span></td>
+                <td><span class="day">07</span></td>
+                <td><span class="day">08</span></td>
+              </tr>
+
+              <tr class="row3">
+                <td><span class="day">09</span></td>
+                <td><span class="day">10</span></td>
+                <td><span class="day">11</span></td>
+                <td><span class="day">12</span></td>
+                <td><span class="day">13</span></td>
+                <td><span class="day">14</span></td>
+                <td><span class="day">15</span></td>
+              </tr>
+
+              <tr class="row4">
+                <td><span class="day">16</span></td>
+                <td><span class="day">17</span></td>
+                <td><span class="day">18</span></td>
+                <td><span class="day">19</span></td>
+                <td><span class="day">20</span></td>
+                <td><span class="day">21</span></td>
+                <td><span class="day">22</span></td>
+              </tr>
+
+              <tr class="row5">
+                <td><span class="day">23</span></td>
+                <td><span class="day">24</span></td>
+                <td><span class="day">25</span></td>
+                <td><span class="day">26</span></td>
+                <td><span class="day">27</span></td>
+                <td><span class="day">28</span></td>
+                <td><span class="day">29</span></td>
+              </tr>
+
+              <tr class="row6">
+                <td><span class="day">30</span></td>
+                <td><span class="day">31</span></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="box">
+          <h2>August</h2>
+          <table>
+            <thead>
+              <tr class="week_days">
+                <th class="days">Sun</th>
+                <th class="days">Mon</th>
+                <th class="days">Thu</th>
+                <th class="days">Wed</th>
+                <th class="days">Thu</th>
+                <th class="days">Fri</th>
+                <th class="days">Sat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row1">
+                <td></td>
+                <td></td>
+                <td><span class="day">01</span></td>
+                <td><span class="day">02</span></td>
+                <td><span class="day">03</span></td>
+                <td><span class="day">04</span></td>
+                <td><span class="day">05</span></td>
+              </tr>
+
+              <tr class="row2">
+                <td><span class="day">06</span></td>
+                <td><span class="day">07</span></td>
+                <td><span class="day">08</span></td>
+                <td><span class="day">09</span></td>
+                <td><span class="day">10</span></td>
+                <td><span class="day">11</span></td>
+                <td><span class="day">12</span></td>
+              </tr>
+
+              <tr class="row3">
+                <td><span class="day">13</span></td>
+                <td><span class="day">14</span></td>
+                <td><span class="day">15</span></td>
+                <td><span class="day">16</span></td>
+                <td><span class="day">17</span></td>
+                <td><span class="day">18</span></td>
+                <td><span class="day">19</span></td>
+              </tr>
+
+              <tr class="row4">
+                <td><span class="day">20</span></td>
+                <td><span class="day">21</span></td>
+                <td><span class="day">22</span></td>
+                <td><span class="day">23</span></td>
+                <td><span class="day">24</span></td>
+                <td><span class="day">25</span></td>
+                <td><span class="day">26</span></td>
+              </tr>
+
+              <tr class="row5">
+                <td><span class="day">27</span></td>
+                <td><span class="day">28</span></td>
+                <td><span class="day">29</span></td>
+                <td><span class="day">30</span></td>
+                <td><span class="day">31</span></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="box">
+          <h2>September</h2>
+          <table>
+            <thead>
+              <tr class="week_days">
+                <th class="days">Sun</th>
+                <th class="days">Mon</th>
+                <th class="days">Thu</th>
+                <th class="days">Wed</th>
+                <th class="days">Thu</th>
+                <th class="days">Fri</th>
+                <th class="days">Sat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row1">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><span class="day">01</span></td>
+                <td><span class="day">02</span></td>
+              </tr>
+
+              <tr class="row2">
+                <td><span class="day">03</span></td>
+                <td><span class="day">04</span></td>
+                <td><span class="day">05</span></td>
+                <td><span class="day">06</span></td>
+                <td><span class="day">07</span></td>
+                <td><span class="day">08</span></td>
+                <td><span class="day">09</span></td>
+              </tr>
+
+              <tr class="row3">
+                <td><span class="day">10</span></td>
+                <td><span class="day">11</span></td>
+                <td><span class="day">12</span></td>
+                <td><span class="day">13</span></td>
+                <td><span class="day">14</span></td>
+                <td><span class="day">15</span></td>
+                <td><span class="day">16</span></td>
+              </tr>
+
+              <tr class="row4">
+                <td><span class="day">17</span></td>
+                <td><span class="day">18</span></td>
+                <td><span class="day">19</span></td>
+                <td><span class="day">20</span></td>
+                <td><span class="day">21</span></td>
+                <td><span class="day">22</span></td>
+                <td><span class="day">23</span></td>
+              </tr>
+
+              <tr class="row5">
+                <td><span class="day">24</span></td>
+                <td><span class="day">25</span></td>
+                <td><span class="day">26</span></td>
+                <td><span class="day">27</span></td>
+                <td><span class="day">28</span></td>
+                <td><span class="day">29</span></td>
+                <td><span class="day">30</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="box">
+          <h2>Octomber</h2>
+          <table>
+            <thead>
+              <tr class="week_days">
+                <th class="days">Sun</th>
+                <th class="days">Mon</th>
+                <th class="days">Thu</th>
+                <th class="days">Wed</th>
+                <th class="days">Thu</th>
+                <th class="days">Fri</th>
+                <th class="days">Sat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row1">
+                <td><span class="day">01</span></td>
+                <td><span class="day">02</span></td>
+                <td><span class="day">03</span></td>
+                <td><span class="day">04</span></td>
+                <td><span class="day">05</span></td>
+                <td><span class="day">06</span></td>
+                <td><span class="day">07</span></td>
+              </tr>
+
+              <tr class="row2">
+                <td><span class="day">08</span></td>
+                <td><span class="day">09</span></td>
+                <td><span class="day">10</span></td>
+                <td><span class="day">11</span></td>
+                <td><span class="day">12</span></td>
+                <td><span class="day">13</span></td>
+                <td><span class="day">14</span></td>
+              </tr>
+
+              <tr class="row3">
+                <td><span class="day">15</span></td>
+                <td><span class="day">16</span></td>
+                <td><span class="day">17</span></td>
+                <td><span class="day">18</span></td>
+                <td><span class="day">19</span></td>
+                <td><span class="day">20</span></td>
+                <td><span class="day">21</span></td>
+              </tr>
+
+              <tr class="row4">
+                <td><span class="day">22</span></td>
+                <td><span class="day">23</span></td>
+                <td><span class="day">24</span></td>
+                <td><span class="day">25</span></td>
+                <td><span class="day">26</span></td>
+                <td><span class="day">27</span></td>
+                <td><span class="day">28</span></td>
+              </tr>
+
+              <tr class="row5">
+                <td><span class="day">29</span></td>
+                <td><span class="day">30</span></td>
+                <td><span class="day">31</span></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="box">
+          <h2>November</h2>
+          <table>
+            <thead>
+              <tr class="week_days">
+                <th class="days">Sun</th>
+                <th class="days">Mon</th>
+                <th class="days">Thu</th>
+                <th class="days">Wed</th>
+                <th class="days">Thu</th>
+                <th class="days">Fri</th>
+                <th class="days">Sat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row1">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><span class="day">01</span></td>
+                <td><span class="day">02</span></td>
+                <td><span class="day">03</span></td>
+                <td><span class="day">04</span></td>
+              </tr>
+
+              <tr class="row2">
+                <td><span class="day">05</span></td>
+                <td><span class="day">06</span></td>
+                <td><span class="day">07</span></td>
+                <td><span class="day">08</span></td>
+                <td><span class="day">09</span></td>
+                <td><span class="day">10</span></td>
+                <td><span class="day">11</span></td>
+              </tr>
+
+              <tr class="row3">
+                <td><span class="day">12</span></td>
+                <td><span class="day">13</span></td>
+                <td><span class="day">14</span></td>
+                <td><span class="day">15</span></td>
+                <td><span class="day">16</span></td>
+                <td><span class="day">17</span></td>
+                <td><span class="day">18</span></td>
+              </tr>
+
+              <tr class="row4">
+                <td><span class="day">19</span></td>
+                <td><span class="day">20</span></td>
+                <td><span class="day">21</span></td>
+                <td><span class="day">22</span></td>
+                <td><span class="day">23</span></td>
+                <td><span class="day">24</span></td>
+                <td><span class="day">25</span></td>
+              </tr>
+
+              <tr class="row5">
+                <td><span class="day">26</span></td>
+                <td><span class="day">27</span></td>
+                <td><span class="day">28</span></td>
+                <td><span class="day">29</span></td>
+                <td><span class="day">30</span></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="box">
+          <h2>December</h2>
+          <table>
+            <thead>
+              <tr class="week_days">
+                <th class="days">Sun</th>
+                <th class="days">Mon</th>
+                <th class="days">Thu</th>
+                <th class="days">Wed</th>
+                <th class="days">Thu</th>
+                <th class="days">Fri</th>
+                <th class="days">Sat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row1">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><span class="day">01</span></td>
+                <td><span class="day">02</span></td>
+              </tr>
+
+              <tr class="row2">
+                <td><span class="day">03</span></td>
+                <td><span class="day">04</span></td>
+                <td><span class="day">05</span></td>
+                <td><span class="day">06</span></td>
+                <td><span class="day">07</span></td>
+                <td><span class="day">08</span></td>
+                <td><span class="day">09</span></td>
+              </tr>
+
+              <tr class="row3">
+                <td><span class="day">10</span></td>
+                <td><span class="day">11</span></td>
+                <td><span class="day">12</span></td>
+                <td><span class="day">13</span></td>
+                <td><span class="day">14</span></td>
+                <td><span class="day">15</span></td>
+                <td><span class="day">16</span></td>
+              </tr>
+
+              <tr class="row4">
+                <td><span class="day">17</span></td>
+                <td><span class="day">18</span></td>
+                <td><span class="day">19</span></td>
+                <td><span class="day">20</span></td>
+                <td><span class="day">21</span></td>
+                <td><span class="day">22</span></td>
+                <td><span class="day">23</span></td>
+              </tr>
+
+              <tr class="row5">
+                <td><span class="day">24</span></td>
+                <td><span class="day">25</span></td>
+                <td><span class="day">26</span></td>
+                <td><span class="day">27</span></td>
+                <td><span class="day">28</span></td>
+                <td><span class="day">29</span></td>
+                <td><span class="day">30</span></td>
+              </tr>
+              <tr class="row6">
+                <td><span class="day">31</span></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script>
+
+       let green = document.getElementById('green')
+       let blue = document.getElementById('blue')
+       let pink = document.getElementById('pink')
+       let darkgreen = document.getElementById('darkgreen')
+  
+///////////................................................................
+       let btns = document.querySelectorAll('.btn')
+
+
+// remove classlist
+function resetclass() {
+    btns.forEach((btn)=>{
+        btn.classList.remove('white')
+    })
+}
+
+       //add Eventlistener in btns
+function callcolor(bgcolor) {
+    resetclass()
+   switch (bgcolor) {
+    case 'green':
+        green.classList.add('white')
+        let days = document.querySelectorAll(".day");
+        days.forEach((day) => {
+            day.addEventListener("click", daycolor);
+            function daycolor(e) {
+                day.style.backgroundColor = "green";
+            }
+        })
+        break;
+        case 'blue':
+       blue.classList.add('white')
+       let days1 = document.querySelectorAll(".day");
+        days1.forEach((day) => {
+            day.addEventListener("click", daycolor);
+            function daycolor(e) {
+                day.style.backgroundColor = "blue";
+            }
+        })
+        break;
+        case 'hotpink':
+       pink.classList.add('white')
+       let days2 = document.querySelectorAll(".day");
+        days2.forEach((day) => {
+            day.addEventListener("click", daycolor);
+            function daycolor(e) {
+                day.style.backgroundColor = "hotpink";
+            }
+        })
+        break;
+        case 'darkgreen':
+        darkgreen.classList.add('white')
+       let days3 = document.querySelectorAll(".day");
+        days3.forEach((day) => {
+            day.addEventListener("click", daycolor);
+            function daycolor(e) {
+                day.style.backgroundColor = "darkgreen";
+            }
+        })
+        break;
+   
+    default:
+        break;
+   }
+}
+   </script>
+  </body>
+</html>
